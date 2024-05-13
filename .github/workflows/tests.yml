@@ -89,3 +89,10 @@ jobs:
           cmake ..
           make
           ./src/calculator squ 5
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [Test_Add, Test_Div, Test_Mul, Test_Sub, Test_Squ]
+    steps:
+      - name: Deploy
+        run: echo "Deploying!"
